@@ -33,7 +33,7 @@ USER appuser
 EXPOSE 8080
 
 # Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+# HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
     CMD python -c "import asyncio; from main import OpenTextServiceApp; \
                    app = OpenTextServiceApp(); \
                    result = asyncio.run(app.health_check()); \
